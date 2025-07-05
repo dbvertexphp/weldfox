@@ -1,192 +1,179 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaEnvelope, FaPhoneAlt, FaPaperPlane } from "react-icons/fa";
+import {
+  FaEnvelope,
+  FaPhoneAlt,
+  FaPaperPlane,
+  FaInstagram,
+  FaLinkedin,
+  FaYoutube,
+} from "react-icons/fa";
+import { motion } from "framer-motion";
+import { slideUpVariants, zoomInVariants } from "../lib/animation";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#2a2a2a] text-white text-sm pt-10 pb-4 px-6 md:px-12">
-      {/* Newsletter */}
-      <div className="max-w-7xl mx-auto mb-10">
-        <h3 className="text-xl font-semibold mb-4">Our Newsletter</h3>
-        <div className="flex max-w-lg w-full">
-          <input
-            type="email"
-            placeholder="Your Email Address"
-            className="w-full px-4 py-2 rounded-l-md text-black outline-none"
-          />
-          <button className="bg-[#1086df] px-4 py-2 rounded-r-md">
-            <FaPaperPlane className="text-white" />
-          </button>
-        </div>
-      </div>
+    <footer className="bg-[#0c1636] text-white px-4 md:px-8 py-10">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        variants={zoomInVariants}
+        className="max-w-7xl mx-auto text-sm"
+      >
+        {/* Grid Layout: 3 Columns, Centered Content */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+          {/* LEFT COLUMN */}
+          <div className="flex flex-col items-center text-center space-y-4">
+            {/* Weldfox Heading */}
+            <h2 className="text-4xl font-extrabold bg-gradient-to-r from-[#ff6f61] to-[#ffb88c] text-transparent bg-clip-text leading-tight">
+              Weldfox - <br /> Imagination <br /> to Reality
+            </h2>
 
-      {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-gray-300">
-        {/* Location */}
-        <div>
-          <h4 className="text-white text-lg font-semibold mb-3 border-l-4 border-[#1086df] pl-2">
-            Location
-          </h4>
-          <p>
-            46/2, Muthanallur Cross, behind Eye Hospital, MR Property,
-            Dommasandra, Bangalore – 562125.
-          </p>
-        </div>
+            {/* Social Icons */}
+            <div className="flex gap-4">
+              <a href="#">
+                <FaLinkedin className="hover:text-[#eb975a] text-white h-6 w-6" />
+              </a>
+              <a href="#">
+                <FaInstagram className="hover:text-[#eb975a] text-white h-6 w-6" />
+              </a>
+              <a href="#">
+                <FaYoutube className="hover:text-[#eb975a] text-white h-6 w-6" />
+              </a>
+            </div>
 
-        {/* Useful Links */}
-        <div>
-          <h4 className="text-white text-lg font-semibold mb-3 border-l-4 border-[#1086df] pl-2">
-            Useful Links
-          </h4>
-          <ul className="space-y-1 text-white">
-            {[
-              { label: "Home", path: "/" },
-              { label: "About Us", path: "/about-us" },
-              { label: "Products", path: "/products" },
-              { label: "Services", path: "/services" },
-              { label: "Contact", path: "/contact" },
-            ].map(({ label, path }) => (
-              <li key={label}>
-                <Link
-                  to={path}
-                  className="group relative inline-block transition-colors duration-300 text-white hover:text-[#1086df]"
-                >
-                  {label}
-                  <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#1086df] transition-all duration-300 group-hover:w-full"></span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+            {/* Newsletter Title */}
+            <label className="text-xl font-bold bg-gradient-to-r from-[#ff6f61] to-[#ffb88c] text-transparent bg-clip-text">
+              Our Newsletter
+            </label>
 
-        {/* Contact Us */}
-        <div>
-          <h4 className="text-white text-lg font-semibold mb-3 border-l-4 border-[#1086df] pl-2">
-            Contact Us
-          </h4>
-          <ul className="space-y-2 text-white">
-            <li className="flex items-center gap-2">
-              <FaEnvelope />
-              <a
-                href="mailto:info@weldfox.com"
-                className="group relative inline-block transition-colors duration-300 text-white hover:text-[#1086df]"
-              >
-                info@weldfox.com
-                <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#1086df] transition-all duration-300 group-hover:w-full"></span>
-              </a>
-            </li>
-            <li className="flex items-center gap-2">
-              <FaEnvelope />
-              <a
-                href="mailto:support@weldfox.com"
-                className="group relative inline-block transition-colors duration-300 text-white hover:text-[#1086df]"
-              >
-                support@weldfox.com
-                <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#1086df] transition-all duration-300 group-hover:w-full"></span>
-              </a>
-            </li>
-            <li className="flex items-center gap-2">
-              <FaEnvelope />
-              <a
-                href="mailto:customercare@weldfox.com"
-                className="group relative inline-block transition-colors duration-300 text-white hover:text-[#1086df]"
-              >
-                customercare@weldfox.com
-                <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#1086df] transition-all duration-300 group-hover:w-full"></span>
-              </a>
-            </li>
-            <li className="flex items-center gap-2">
-              <FaPhoneAlt />
-              <a
-                href="tel:+919611646033"
-                className="group relative inline-block transition-colors duration-300 text-white hover:text-[#1086df]"
-              >
-                +91-9611646033
-                <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#1086df] transition-all duration-300 group-hover:w-full"></span>
-              </a>
-            </li>
-            <li className="flex items-center gap-2">
-              <FaPhoneAlt />
-              <a
-                href="tel:+919964314999"
-                className="group relative inline-block transition-colors duration-300 text-white hover:text-[#1086df]"
-              >
-                +91-9964314999
-                <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#1086df] transition-all duration-300 group-hover:w-full"></span>
-              </a>
-            </li>
-            <li className="flex items-center gap-2">
-              <FaPhoneAlt />
-              <a
-                href="tel:+918073937590"
-                className="group relative inline-block transition-colors duration-300 text-white hover:text-[#1086df]"
-              >
-                +91-8073937590
-                <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#1086df] transition-all duration-300 group-hover:w-full"></span>
-              </a>
-            </li>
-          </ul>
-        </div>
+            {/* Newsletter Input */}
+            <div className="flex w-full max-w-xs">
+              <input
+                type="email"
+                placeholder="Your Email Address"
+                className="w-full px-3 py-2 rounded-l-md text-black outline-none"
+              />
+              <button className="w-10 h-10 flex items-center justify-center rounded-r-md bg-gradient-to-r from-[#ff6f61] to-[#ffb88c]">
+                <FaPaperPlane className="text-white text-sm" />
+              </button>
+            </div>
+          </div>
 
-        {/* Quick Contact */}
-        <div>
-          <h4 className="text-white text-lg font-semibold mb-3 border-l-4 border-[#1086df] pl-2">
-            Quick Contact Us
-          </h4>
-          <form className="space-y-2 rounded-lg">
+          {/* MIDDLE COLUMN */}
+          <div className="flex flex-col items-center text-center justify-center space-y-6">
+            {/* Contact Us + Useful Links */}
+            <div className="flex flex-col md:flex-row gap-6 w-full justify-center">
+              {/* Contact Us */}
+              <div className="text-left">
+                <h4 className="font-bold text-xl mb-1 bg-gradient-to-r from-[#ff6f61] to-[#ffb88c] text-transparent bg-clip-text">
+                  Contact Us
+                </h4>
+                <ul className="space-y-1">
+                  {[
+                    {
+                      label: "info@weldfox.com",
+                      href: "mailto:info@weldfox.com",
+                    },
+                    {
+                      label: "support@weldfox.com",
+                      href: "mailto:support@weldfox.com",
+                    },
+                    { label: "+91-0123456789", href: "tel:+910123456789" },
+                    { label: "+91-0123456789", href: "tel:+910123456789" },
+                  ].map(({ label, href }, idx) => (
+                    <li key={idx} className="flex items-center gap-2">
+                      {href.includes("mailto") ? (
+                        <FaEnvelope />
+                      ) : (
+                        <FaPhoneAlt />
+                      )}
+                      <a
+                        href={href}
+                        className="text-base font-semibold text-white hover:bg-gradient-to-r hover:from-[#ff6f61] hover:to-[#ffb88c] hover:text-transparent hover:bg-clip-text"
+                      >
+                        {label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Useful Links */}
+              <div className="text-left">
+                <h4 className="font-bold text-xl mb-1 bg-gradient-to-r from-[#ff6f61] to-[#ffb88c] text-transparent bg-clip-text">
+                  Useful Links
+                </h4>
+                <ul className="space-y-1">
+                  {[
+                    { label: "Home", path: "/" },
+                    { label: "About Us", path: "/about-us" },
+                    { label: "Our Products", path: "/product" },
+                    { label: "Services", path: "/services" },
+                    { label: "Contact", path: "/contact" },
+                  ].map(({ label, path }) => (
+                    <li key={label}>
+                      <Link
+                        to={path}
+                        className="text-base font-semibold text-white hover:bg-gradient-to-r hover:from-[#ff6f61] hover:to-[#ffb88c] hover:text-transparent hover:bg-clip-text"
+                      >
+                        {label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* Location */}
+            <div className="text-base font-semibold text-white max-w-sm">
+              <h4 className="font-bold text-xl mb-1 bg-gradient-to-r from-[#ff6f61] to-[#ffb88c] text-transparent bg-clip-text">
+                Location
+              </h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Repellendus officiis explicabo eos, fuga porro, obcaecati
+                aspernatur.
+              </p>
+            </div>
+          </div>
+
+          {/* RIGHT COLUMN */}
+          <div className="flex flex-col items-center text-center space-y-3 max-w-sm mx-auto">
+            <h4 className="font-bold text-xl mb-2 bg-gradient-to-r from-[#ff6f61] to-[#ffb88c] text-transparent bg-clip-text">
+              Quick Contact Us
+            </h4>
             <input
               type="text"
               placeholder="Name"
-              className="w-full p-2 bg-transparent border border-gray-600 outline-none text-white rounded-lg"
+              className="w-full px-3 py-2 bg-transparent border border-gray-300 outline-none text-white rounded"
             />
             <input
               type="email"
-              placeholder="Email Address"
-              className="w-full p-2 bg-transparent border border-gray-600 outline-none text-white rounded-lg"
+              placeholder="Email"
+              className="w-full px-3 py-2 bg-transparent border border-gray-300 outline-none text-white rounded"
             />
             <input
               type="text"
               placeholder="Mobile No"
-              className="w-full p-2 bg-transparent border border-gray-600 outline-none text-white rounded-lg"
+              className="w-full px-3 py-2 bg-transparent border border-gray-300 outline-none text-white rounded"
             />
             <textarea
+              rows={2}
               placeholder="Message"
-              rows={3}
-              className="w-full p-2 bg-transparent border border-gray-600 outline-none text-white rounded-lg"
+              className="w-full px-3 py-2 bg-transparent border border-gray-300 outline-none text-white rounded"
             />
-            <button
-              type="submit"
-              className="bg-[#1086df] text-white px-4 py-2 mt-2 rounded-lg"
-            >
+            <button className="w-full bg-gradient-to-r from-[#ff6f61] to-[#ff6f61] text-white px-4 py-2 rounded-full text-sm font-bold">
               Send
             </button>
-          </form>
-        </div>
-      </div>
-
-      {/* Bottom Line */}
-      <div className="mt-10 border-t border-gray-700 pt-4 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400">
-        <div className="space-x-4 mb-2 md:mb-0">
-          {[
-            { label: "Home", path: "/" },
-            { label: "About Us", path: "/about-us" },
-            { label: "Contact Us", path: "/contact" },
-          ].map(({ label, path }) => (
-            <Link
-              to={path}
-              key={label}
-              className="group relative inline-block transition-colors duration-300 text-white hover:text-[#1086df]"
-            >
-              {label}
-              <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#1086df] transition-all duration-300 group-hover:w-full"></span>
-            </Link>
-          ))}
+          </div>
         </div>
 
-        <div>
-          Copyright © 2019. C4G Automation Pvt Ltd. All Rights Reserved.
+        {/* Footer Bottom */}
+        <div className="mt-10 border-t border-gray-700 pt-4 text-center text-[11px] text-white">
+          © {new Date().getFullYear()} Weldfox Pvt Ltd. All Rights Reserved.
         </div>
-      </div>
+      </motion.div>
     </footer>
   );
 };

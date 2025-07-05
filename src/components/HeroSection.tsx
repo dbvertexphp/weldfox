@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 // import slidingDoorImage from "@/public/sliding-door.webp";
+import { motion } from "framer-motion";
+import { slideUpVariants, zoomInVariants } from "../lib/animation";
 
 
 const slides = [
@@ -25,14 +27,14 @@ const HeroSection = () => {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
 
   // Handle scroll effect
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      setScrollOffset(Math.min(scrollY, 200));
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  // Auto-slide effect
+useEffect(() => {
+  const interval = setInterval(() => {
+    setCurrentSlideIndex((prevIndex) => (prevIndex + 1) % slides.length);
+  }, 5000); // <-- 5 seconds
+  return () => clearInterval(interval);
+}, []);
+
 
   // Auto-slide effect
   useEffect(() => {
@@ -63,7 +65,10 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-black/50 z-0" />
 
       {/* Heading Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-40">
+      <motion.div
+                          initial="hidden"
+                          whileInView="visible"
+                          variants={zoomInVariants} className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-40">
         <div className="relative inline-block">
           {/* Gradient behind text */}
           <div
@@ -87,7 +92,7 @@ const HeroSection = () => {
             <span>{currentSlide.heading2}</span>
           </h1>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

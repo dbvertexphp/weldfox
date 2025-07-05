@@ -7,7 +7,7 @@ import OurServices from "@/components/services";
 import ImageOverlaySection from "@/components/imageOverlay";
 import Testimonials from "@/components/testimonials";
 // import Testimonals from "@/components/testimonials";
-import Footer from "@/components/footer";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
