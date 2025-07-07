@@ -5,6 +5,9 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import Services from "./components/home/Services";
+import { Contact } from "lucide-react";
+import Process from "./components/home/Process";
 
 const queryClient = new QueryClient();
 
@@ -13,14 +16,14 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <div className="font-dmsans">
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
-      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Index />} />
+					<Route path="/gallery" element={<Services />} />
+					<Route path="/inquiry" element={<Process />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
 );
