@@ -14,10 +14,7 @@ import { slideUpVariants, zoomInVariants } from "../lib/animation";
 const Footer = () => {
   return (
     <footer className="bg-[#0c1636] text-white px-4 md:px-8 py-10">
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        variants={zoomInVariants}
+      <div
         className="max-w-7xl mx-auto text-sm"
       >
         {/* Grid Layout: 3 Columns, Centered Content */}
@@ -25,9 +22,14 @@ const Footer = () => {
           {/* LEFT COLUMN */}
           <div className="flex flex-col items-center text-center space-y-4">
             {/* Weldfox Heading */}
-            <h2 className="text-4xl font-extrabold bg-gradient-to-r from-[#ff6f61] to-[#ffb88c] text-transparent bg-clip-text leading-tight">
+            <motion.h2
+              initial="hidden"
+              whileInView="visible"
+              variants={zoomInVariants}
+              className="text-4xl font-extrabold bg-gradient-to-r from-[#ff6f61] to-[#ffb88c] text-transparent bg-clip-text leading-tight"
+            >
               Weldfox - <br /> Imagination <br /> to Reality
-            </h2>
+            </motion.h2>
 
             {/* Social Icons */}
             <div className="flex gap-4">
@@ -43,9 +45,14 @@ const Footer = () => {
             </div>
 
             {/* Newsletter Title */}
-            <label className="text-xl font-bold bg-gradient-to-r from-[#ff6f61] to-[#ffb88c] text-transparent bg-clip-text">
+            <motion.label
+              initial="hidden"
+              whileInView="visible"
+              variants={slideUpVariants}
+              className="text-xl font-bold bg-gradient-to-r from-[#ff6f61] to-[#ffb88c] text-transparent bg-clip-text"
+            >
               Our Newsletter
-            </label>
+            </motion.label>
 
             {/* Newsletter Input */}
             <div className="flex w-full max-w-xs">
@@ -66,10 +73,20 @@ const Footer = () => {
             <div className="flex flex-col md:flex-row gap-6 w-full justify-center">
               {/* Contact Us */}
               <div className="text-left">
-                <h4 className="font-bold text-xl mb-1 bg-gradient-to-r from-[#ff6f61] to-[#ffb88c] text-transparent bg-clip-text">
+                <motion.h4
+                  initial="hidden"
+                  whileInView="visible"
+                  variants={slideUpVariants}
+                  className="font-bold text-xl mb-1 bg-gradient-to-r from-[#ff6f61] to-[#ffb88c] text-transparent bg-clip-text"
+                >
                   Contact Us
-                </h4>
-                <ul className="space-y-1">
+                </motion.h4>
+                <motion.ul
+                  initial="hidden"
+                  whileInView="visible"
+                  variants={zoomInVariants}
+                  className="space-y-1"
+                >
                   {[
                     {
                       label: "info@weldfox.com",
@@ -96,15 +113,25 @@ const Footer = () => {
                       </a>
                     </li>
                   ))}
-                </ul>
+                </motion.ul>
               </div>
 
               {/* Useful Links */}
               <div className="text-left">
-                <h4 className="font-bold text-xl mb-1 bg-gradient-to-r from-[#ff6f61] to-[#ffb88c] text-transparent bg-clip-text">
+                <motion.h4
+                  initial="hidden"
+                  whileInView="visible"
+                  variants={slideUpVariants}
+                  className="font-bold text-xl mb-1 bg-gradient-to-r from-[#ff6f61] to-[#ffb88c] text-transparent bg-clip-text"
+                >
                   Useful Links
-                </h4>
-                <ul className="space-y-1">
+                </motion.h4>
+                <motion.ul
+                  initial="hidden"
+                  whileInView="visible"
+                  variants={zoomInVariants}
+                  className="space-y-1"
+                >
                   {[
                     { label: "Home", path: "/" },
                     { label: "About Us", path: "/about-us" },
@@ -121,44 +148,70 @@ const Footer = () => {
                       </Link>
                     </li>
                   ))}
-                </ul>
+                </motion.ul>
               </div>
             </div>
 
             {/* Location */}
-            <div className="text-base font-semibold text-white max-w-sm">
-              <h4 className="font-bold text-xl mb-1 bg-gradient-to-r from-[#ff6f61] to-[#ffb88c] text-transparent bg-clip-text">
+            <motion.div className="text-base font-semibold text-white max-w-sm">
+              <motion.h4
+                initial="hidden"
+                whileInView="visible"
+                variants={slideUpVariants}
+                className="font-bold text-xl mb-1 bg-gradient-to-r from-[#ff6f61] to-[#ffb88c] text-transparent bg-clip-text"
+              >
                 Location
-              </h4>
-              <p>
+              </motion.h4>
+              <motion.p
+                initial="hidden"
+                whileInView="visible"
+                variants={zoomInVariants}
+              >
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Repellendus officiis explicabo eos, fuga porro, obcaecati
                 aspernatur.
-              </p>
-            </div>
+              </motion.p>
+            </motion.div>
           </div>
 
           {/* RIGHT COLUMN */}
-          <div className="flex flex-col items-center text-center space-y-3 max-w-sm mx-auto">
-            <h4 className="font-bold text-xl mb-2 bg-gradient-to-r from-[#ff6f61] to-[#ffb88c] text-transparent bg-clip-text">
+          <motion.div className="flex flex-col items-center text-center space-y-3 max-w-sm mx-auto">
+            <motion.h4
+              initial="hidden"
+              whileInView="visible"
+              variants={slideUpVariants}
+              className="font-bold text-xl mb-2 bg-gradient-to-r from-[#ff6f61] to-[#ffb88c] text-transparent bg-clip-text"
+            >
               Quick Contact Us
-            </h4>
-            <input
+            </motion.h4>
+            <motion.input
+              initial="hidden"
+              whileInView="visible"
+              variants={zoomInVariants}
               type="text"
               placeholder="Name"
               className="w-full px-3 py-2 bg-transparent border border-gray-300 outline-none text-white rounded"
             />
-            <input
+            <motion.input
+              initial="hidden"
+              whileInView="visible"
+              variants={zoomInVariants}
               type="email"
               placeholder="Email"
               className="w-full px-3 py-2 bg-transparent border border-gray-300 outline-none text-white rounded"
             />
-            <input
+            <motion.input
+              initial="hidden"
+              whileInView="visible"
+              variants={zoomInVariants}
               type="text"
               placeholder="Mobile No"
               className="w-full px-3 py-2 bg-transparent border border-gray-300 outline-none text-white rounded"
             />
-            <textarea
+            <motion.textarea
+              initial="hidden"
+              whileInView="visible"
+              variants={zoomInVariants}
               rows={2}
               placeholder="Message"
               className="w-full px-3 py-2 bg-transparent border border-gray-300 outline-none text-white rounded"
@@ -166,14 +219,14 @@ const Footer = () => {
             <button className="w-full bg-gradient-to-r from-[#ff6f61] to-[#ff6f61] text-white px-4 py-2 rounded-full text-sm font-bold">
               Send
             </button>
-          </div>
+          </motion.div>
         </div>
 
         {/* Footer Bottom */}
         <div className="mt-10 border-t border-gray-700 pt-4 text-center text-[11px] text-white">
           © {new Date().getFullYear()} Weldfox Pvt Ltd. All Rights Reserved.
         </div>
-      </motion.div>
+      </div>
     </footer>
   );
 };

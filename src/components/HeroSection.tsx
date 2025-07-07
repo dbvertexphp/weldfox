@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { slideUpVariants, zoomInVariants } from "../lib/animation";
 
-
 const slides = [
   {
     url: "https://www.geapl.com/images/banner_videos/banner-2.jpg",
@@ -16,7 +15,7 @@ const slides = [
     heading2: "Empowering Industrial Growth",
   },
   {
-    url: "/automation.webp",
+    url: "/Automation.jpg",
     heading1: "Custom Fabrication that",
     heading2: " combines excellence and value!",
   },
@@ -28,20 +27,17 @@ const HeroSection = () => {
 
   // Handle scroll effect
   // Auto-slide effect
-useEffect(() => {
-  const interval = setInterval(() => {
-    setCurrentSlideIndex((prevIndex) => (prevIndex + 1) % slides.length);
-  }, 5000); // <-- 5 seconds
-  return () => clearInterval(interval);
-}, []);
-
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlideIndex((prevIndex) => (prevIndex + 1) % slides.length);
+    }, 5000); // <-- 5 seconds
+    return () => clearInterval(interval);
+  }, []);
 
   // Auto-slide effect
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentSlideIndex((prevIndex) =>
-        (prevIndex + 1) % slides.length
-      );
+      setCurrentSlideIndex((prevIndex) => (prevIndex + 1) % slides.length);
     }, 1000); // Change every 5 seconds
     return () => clearInterval(interval);
   }, []);
@@ -66,9 +62,11 @@ useEffect(() => {
 
       {/* Heading Content */}
       <motion.div
-                          initial="hidden"
-                          whileInView="visible"
-                          variants={zoomInVariants} className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-40">
+        initial="hidden"
+        whileInView="visible"
+        variants={zoomInVariants}
+        className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-40"
+      >
         <div className="relative inline-block">
           {/* Gradient behind text */}
           <div

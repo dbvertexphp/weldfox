@@ -32,35 +32,39 @@ const testimonials = [
 const TestimonialsSection = () => {
   return (
     <section className="bg-[#F9F9F9] py-16 px-4">
-      <motion.div
-                    initial="hidden"
-                    whileInView="visible"
-                    variants={zoomInVariants} className="max-w-7xl mx-auto text-center">
-        <h2 className="text-5xl font-bold text-[#422eb1] mb-2 inline-block relative">
+      <motion.div className="max-w-7xl mx-auto text-center">
+        <motion.h2
+          initial="hidden"
+          whileInView="visible"
+          variants={zoomInVariants}
+          className="text-5xl font-bold text-[#422eb1] mb-2 inline-block relative"
+        >
           Testimonials
           <span className="absolute left-0 -bottom-2 w-full h-1 bg-[#e09366] rounded-full"></span>
-        </h2>
+        </motion.h2>
 
         <p className="text-center text-base font-semibold mb-7 text-[#0e183a]">
           See what people say about us
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-1 gap-y-3">
-  {testimonials.map((testimonial, index) => (
-    <div
-      key={index}
-      className="bg-white shadow-md rounded-none p-6 w-[400px] h-[200px] flex flex-col justify-between text-center text-base transform transition-transform duration-300 hover:scale-105 hover:shadow-lg"
-    >
-      <p className="text-gray-800 text-base">
-        “{testimonial.text}”
-      </p>
-      <p className="text-[#ff6448] font-semibold text-base">
-        — {testimonial.author}
-      </p>
-    </div>
-  ))}
-</div>
-
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          variants={slideUpVariants}
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-1 gap-y-3"
+        >
+          {testimonials.map((testimonial, index) => (
+            <div
+              key={index}
+              className="bg-white shadow-md rounded-none p-6 w-[400px] h-[200px] flex flex-col justify-between text-center text-base transform transition-transform duration-300 hover:scale-105 hover:shadow-lg"
+            >
+              <p className="text-gray-800 text-base">“{testimonial.text}”</p>
+              <p className="text-[#ff6448] font-semibold text-base">
+                — {testimonial.author}
+              </p>
+            </div>
+          ))}
+        </motion.div>
       </motion.div>
     </section>
   );

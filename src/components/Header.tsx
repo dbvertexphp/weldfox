@@ -2,9 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ChevronDown, Mail, Phone, Menu, X } from "lucide-react";
 import ServicesData from "@/components/servicesData";
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
 import { slideUpVariants, zoomInVariants } from "@/lib/animation";
-
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -34,18 +33,21 @@ const Header = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div className="flex justify-between items-center h-[100px]">
             <motion.img
-            initial="hidden"
-						whileInView="visible"
-						variants={zoomInVariants}
+              initial="hidden"
+              whileInView="visible"
+              variants={zoomInVariants}
               src="/logo.PNG"
               alt="company logo"
               className="w-[200px] h-[70px]"
             />
 
             {/* Desktop Navigation */}
-            <motion.nav initial="hidden"
-						whileInView="visible"
-						variants={slideUpVariants} className="hidden md:flex items-center space-x-8 mr-10 h-full">
+            <motion.nav
+              initial="hidden"
+              whileInView="visible"
+              variants={slideUpVariants}
+              className="hidden md:flex items-center space-x-8 mr-10 h-full"
+            >
               <Link
                 to="/"
                 className="text-gray-700 hover:text-[#eb975a] font-semibold text-xl"
@@ -82,7 +84,6 @@ const Header = () => {
                 {/* Dropdown Panel with Triangle */}
                 {isServicesOpen && (
                   <div className="absolute top-[200%] ml-[10px] transform -translate-x-1/2 z-50">
-
                     {/* Dropdown Container */}
                     <div className="bg-white shadow-lg border rounded-md px-10 py-6 w-[54vw] max-w-[1000px]">
                       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-12 gap-y-5">

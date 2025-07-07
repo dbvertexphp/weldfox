@@ -24,23 +24,20 @@ const ServicesSection = () => {
       className="bg-white pt-10 pb-16 px-2 sm:px-4 md:px-6 transition-all duration-500 ease-in-out flex flex-col items-center"
     >
       {/* Heading with Orange Border */}
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        variants={zoomInVariants}
-        className="max-w-7xl mx-auto text-center relative mb-16"
-      >
-        <hr className="border-t-4 border-[#ff893a] w-1/2 mx-auto" />
-        <h2 className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-white px-4 text-4xl md:text-5xl font-bold text-[#35165e] uppercase">
+      <div className="max-w-7xl mx-auto relative flex justify-center items-center mb-16 ">
+        <hr className="border-t-4 border-[#ff893a] w-full" />
+        <motion.h2
+          initial="hidden"
+          whileInView="visible"
+          variants={zoomInVariants}
+          className="absolute z-10 bg-white px-4 text-center whitespace-nowrap w-fit text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#35165e] uppercase"
+        >
           Our Services
-        </h2>
-      </motion.div>
+        </motion.h2>
+      </div>
 
       {/* Grid Layout */}
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        variants={zoomInVariants} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-2 gap-y-7 mt-[100px] transition-all duration-700 ease-in-out w-full max-w-7xl">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-2 gap-y-7 mt-[60px] transition-all duration-700 ease-in-out w-full max-w-7xl">
         {displayedServices.map((service, index) => (
           <div
             key={index}
@@ -51,23 +48,28 @@ const ServicesSection = () => {
               <div className="w-14 h-14 bg-white rounded-full border-4 border-[#ff893a] flex items-center justify-center absolute -top-7 left-1/2 -translate-x-1/2">
                 <span className="text-[#ff893a] text-xl font-bold">🛠️</span>
               </div>
-              <h3 className="text-md font-bold text-white mt-6 px-2 text-center">
+              <h3 className="text-lg font-bold text-white mt-6 px-2 text-center">
                 {service.title}
               </h3>
             </div>
 
             {/* Card Content */}
-            <div className="flex flex-col justify-between pt-10 pb-6 px-4 text-center min-h-[220px]">
-              <p className="text-sm text-[#141414]">{service.description}</p>
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              variants={zoomInVariants}
+              className="flex flex-col justify-between pt-10 pb-6 px-4 text-center min-h-[270px]"
+            >
+              <p className="text-base text-[#141414]">{service.description}</p>
               <div>
                 <button className="mt-4 text-sm font-bold text-[#35165e] underline hover:text-[#ff893a] transition duration-300">
                   LEARN MORE
                 </button>
               </div>
-            </div>
+            </motion.div>
           </div>
         ))}
-      </motion.div>
+      </div>
 
       {/* Toggle Button */}
       <div className="mt-10 text-center">
