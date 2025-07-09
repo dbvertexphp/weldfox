@@ -1,53 +1,48 @@
-import React, { useState, useEffect } from 'react';
-import Header from '../components/layout/Header';
-import Footer from '../components/layout/Footer';
-import HeroBanner from '../components/home/HeroBanner';
-import AboutSection from '../components/home/AboutSection';
-import Services from '../components/home/Services';
-import ImageOverlaySection from '../components/home/Process';
+import React, { useState, useEffect } from "react";
+import Banner from "@/components/Banner";
+import Header from "@/components/Header";
+import Experience from "@/components/Experience";
+import Counting from "@/components/Counting";
+import Services from "@/components/Services";
+import Gallery from "@/components/Gallery";
+import Process from "@/components/Process";
+import Testimonials from "@/components/Testimonials";
+import Video from "@/components/Video";
 
 const Index = () => {
   const [isHeaderVisible, setIsHeaderVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
 
+  // Optional: Handle scroll to toggle header visibility
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+      if (window.scrollY > 50) {
         setIsHeaderVisible(false);
       } else {
         setIsHeaderVisible(true);
       }
-
-      setLastScrollY(currentScrollY);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <div className="min-h-screen relative">
-      {/* ✅ Fixed & Centered Header */}
+    <div className="min-h-screen">
       <div
-        className={`fixed top-0 left-[5%] w-full z-50 transition-transform duration-300 ease-in-out ${
-          isHeaderVisible ? 'translate-y-6' : '-translate-y-full'
+        className={`fixed top-0 left-0 w-full transition-transform duration-300 ease-in-out z-50 ${
+          isHeaderVisible ? "translate-y-6" : "-translate-y-full"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4">
-          <Header />
-        </div>
+        <Header />
       </div>
-
-      {/* ✅ Content (starts from top, header overlaps banner) */}
-      <div className="relative z-10">
-        <HeroBanner />
-        <AboutSection />
-        <ImageOverlaySection />
-        <Services />
-        <Footer />
-      </div>
+      <Banner />
+      <Experience />
+      <Counting/>
+      <Services />
+      <Gallery />
+      <Process/>
+      <Testimonials/>
+      <Video/>
     </div>
   );
 };
