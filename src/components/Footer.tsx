@@ -44,7 +44,7 @@ const Footer = () => {
         {/* Our Services (Center - Two Column Layout) */}
         <div className="md:col-span-4 flex justify-left">
           <div className="w-full">
-            <h3 className="text-lg font-semibold mb-4 border-b border-[#f79d2b] inline-block pb-1 text-center w-[40%]">
+            <h3 className="text-lg font-semibold mb-4 border-b border-[#f79d2b] inline-block pb-1 text-left w-[40%]">
               Our Services
             </h3>
             <div className="grid grid-cols-2 gap-x-6 text-[#A0A0A0] text-base">

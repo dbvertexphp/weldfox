@@ -15,7 +15,6 @@ const StickyHeader = () => {
       if (scrollingDown && currentScrollY > halfwayPoint) {
         setIsStickyVisible(true);
       } else if (!scrollingDown && currentScrollY < halfwayPoint - 100) {
-        // give buffer to avoid flickering
         setIsStickyVisible(false);
       }
 
@@ -39,17 +38,12 @@ const StickyHeader = () => {
         <div className="max-w-6xl mx-auto px-4 py-5 flex items-center justify-between">
           <img src="/logo1.PNG" alt="Logo" className="h-14 w-auto" />
           <nav className="hidden md:flex space-x-6 text-lg font-medium">
-            {["Home", "About", "Services", "Projects", "News", "Contact"].map(
-              (item) => (
-                <a
-                  key={item}
-                  href="#"
-                  className="text-[#1a2940] hover:text-[#f79d2b] transition"
-                >
-                  {item}
-                </a>
-              )
-            )}
+            <a href="/" className="text-[#1a2940] hover:text-[#f79d2b] transition">Home</a>
+            <a href="/pages/About-us" className="text-[#1a2940] hover:text-[#f79d2b] transition">About</a>
+            <a href="/services" className="text-[#1a2940] hover:text-[#f79d2b] transition">Services</a>
+            <a href="/projects" className="text-[#1a2940] hover:text-[#f79d2b] transition">Projects</a>
+            <a href="/news" className="text-[#1a2940] hover:text-[#f79d2b] transition">News</a>
+            <a href="/contact" className="text-[#1a2940] hover:text-[#f79d2b] transition">Contact</a>
           </nav>
         </div>
       </header>

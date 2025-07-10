@@ -19,7 +19,9 @@ const config: Config = {
     extend: {
   fontFamily: {
     poppins: ['Poppins', 'sans-serif'],
+    montserrat: ['Montserrat', 'sans-serif'],
     sans: ['Poppins', 'sans-serif'], // optional: make it the default
+
   },
 
       colors: {

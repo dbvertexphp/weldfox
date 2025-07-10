@@ -11,6 +11,15 @@ import {
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const navLinks = [
+    { name: "Home", path: "/" },
+    { name: "About", path: "/pages/About-us" },
+    { name: "Services", path: "/services" },
+    { name: "Projects", path: "/projects" },
+    { name: "News", path: "/news" },
+    { name: "Contact", path: "/contact" },
+  ];
+
   return (
     <div className="w-full text-white">
       {/* 🔵 Desktop Top Header: Logo + Contact Info */}
@@ -68,13 +77,11 @@ const Header = () => {
               menuOpen ? "flex" : "hidden"
             } lg:flex`}
           >
-            {["Home", "About", "Services", "Projects", "News", "Contact"].map(
-              (item, idx) => (
-                <a href="#" key={idx} className="hover:text-[#F79D2B]">
-                  {item}
-                </a>
-              )
-            )}
+            {navLinks.map((item, idx) => (
+              <a href={item.path} key={idx} className="hover:text-[#F79D2B]">
+                {item.name}
+              </a>
+            ))}
           </div>
 
           {/* Desktop Only: Search + Quote */}
@@ -103,16 +110,14 @@ const Header = () => {
             </button>
           </div>
           <ul className="flex flex-col divide-y">
-            {["Home", "About", "Services", "Projects", "News", "Contact"].map(
-              (item, index) => (
-                <li
-                  key={index}
-                  className="flex justify-between items-center px-5 py-4 text-base hover:bg-gray-50 text-black"
-                >
-                  <span>{item}</span>
-                </li>
-              )
-            )}
+            {navLinks.map((item, index) => (
+              <li
+                key={index}
+                className="flex justify-between items-center px-5 py-4 text-base hover:bg-gray-50 text-black"
+              >
+                <a href={item.path}>{item.name}</a>
+              </li>
+            ))}
           </ul>
         </div>
       )}
