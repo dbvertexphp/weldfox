@@ -1,4 +1,27 @@
 import React from "react";
+import { motion } from "framer-motion";
+
+// Animation variants
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.3,
+    },
+  },
+};
+
+const imageVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
+    },
+  },
+};
 
 const steps = [
   {
@@ -29,59 +52,69 @@ const steps = [
 
 const Process = () => {
   return (
-    <section className="relative w-full h-[700px] overflow-hidden">
-      {/* Background */}
-      <img
-        src="/services1.jpg"
-        className="absolute inset-0 w-full h-full object-cover"
-        alt="Services Background"
-      />
+    <section className="relative w-full overflow-hidden">
+      {/* 🔹 Background */}
+      <div className="absolute inset-0">
+        <img
+          src="/services1.jpg"
+          alt="Services Background"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-[#1a2940]/95" />
+      </div>
 
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-[#1a2940] bg-opacity-95 px-4 flex flex-col items-center">
-        {/* Headings */}
-        <div className="text-center mt-20">
-          <p className="text-[#8a8a8a] max-w-xl mx-auto mb-2 tracking-wider uppercase">
+      {/* 🔹 Content */}
+      <div className="relative z-10 px-4 py-20 max-w-8xl mx-auto">
+        {/* 🔸 Heading */}
+        <div className="text-center">
+          <p className="text-[#8a8a8a] mb-2 tracking-wider uppercase">
             THE WELDFOX COMPANY
           </p>
-          <h2 className="text-4xl font-bold text-[#ffffff]">
-            How Weldfox Works
-          </h2>
+          <h2 className="text-4xl font-bold text-white">How Weldfox Works</h2>
         </div>
 
-        {/* Steps */}
-        <div className="flex flex-wrap justify-center items-center gap-[70px] max-w-7xl mx-auto mt-16 relative">
+        {/* 🔸 Steps */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="mt-20 flex flex-col gap-20 sm:gap-10 sm:flex-row sm:flex-wrap sm:justify-center items-center"
+        >
           {steps.map((step, index) => (
             <React.Fragment key={index}>
-              <div className="flex flex-col items-center text-center max-w-[180px] relative">
-                {/* Step Circle with image and outline */}
-                <div className="relative">
-                  <div className="w-[250px] h-[250px] rounded-full overflow-hidden relative z-10 outline outline-[3px] outline-white outline-offset-4">
+              {/* Step Card */}
+              <div className="flex flex-col items-center text-center w-full sm:w-[220px] relative">
+                <motion.div variants={imageVariants} className="relative">
+                  {/* Animated Image Circle */}
+                  <div className="w-[170px] h-[170px] rounded-full overflow-hidden outline outline-[3px] outline-white outline-offset-4">
                     <img
                       src={step.img}
                       alt={step.title}
-                      className="w-full h-full object-cover rounded-full"
+                      className="w-full h-full object-cover"
                     />
                   </div>
 
-                  {/* Floating Step Number */}
-                  <div className="absolute -bottom-7 left-1/2 -translate-x-1/2 z-20 w-[60px] h-[60px] bg-[#F79D2B] text-white text-xl flex items-center justify-center rounded-full font-sm shadow-md border-4 border-[#1a2940]">
+                  {/* Step Number */}
+                  <div className="absolute -bottom-7 left-1/2 transform -translate-x-1/2 w-[60px] h-[60px] bg-[#F79D2B] text-white text-xl flex items-center justify-center rounded-full font-semibold shadow-md border-4 border-[#1a2940]">
                     {step.number}
                   </div>
-                </div>
+                </motion.div>
 
-                {/* Title & Description */}
-                <h3 className="text-2xl font-md text-white mt-10">{step.title}</h3>
-                <p className="text-sm text-[#c0c0c0] mt-2">{step.description}</p>
+                {/* Text */}
+                <h3 className="text-xl font-semibold text-white mt-10">{step.title}</h3>
+                <p className="text-sm text-[#c0c0c0] mt-2 px-4">{step.description}</p>
               </div>
 
-              {/* Arrow between steps */}
+              {/* Arrow Between Steps */}
               {index !== steps.length - 1 && (
-                <div className="text-4xl text-white hidden sm:block">→</div>
+                <div className="hidden sm:flex items-center justify-center">
+                  <img src="/arrow.svg" alt="Arrow" className="w-14 h-8 mt-16" />
+                </div>
               )}
             </React.Fragment>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

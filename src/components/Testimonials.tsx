@@ -56,70 +56,72 @@ const Testimonials = () => {
   }
 
   return (
-    <section className="w-full bg-white py-20 px-4 max-w-7xl mx-auto">
-      <div className="flex flex-col md:flex-row justify-between items-start gap-12">
-        {/* Left: Heading Section */}
-        <div className="max-w-lg text-center md:text-left">
-          <FaQuoteLeft className="text-4xl text-[#F79D2B] mb-4" />
-          <p className="uppercase text-sm text-gray-500 tracking-widest">
-            THE WELDFOX COMPANY
-          </p>
-          <h2 className="text-3xl md:text-4xl font-bold text-[#0f1f3e] mt-2">
-            Our Satisfied & <br /> Happy Customers
-          </h2>
-          <p className="text-gray-600 mt-4 max-w-sm">
-            Veniam quis nostrud exercitation ullamco laboris nisi ut aliquip exa aute irure
-            dolor in voluptate velit esse cillum dolore.
-          </p>
-        </div>
+    <section className="w-full bg-white py-20 px-4">
+  <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-start gap-12">
+    {/* Left: Heading */}
+    <div className="max-w-lg text-center lg:text-left">
+      <FaQuoteLeft className="text-4xl text-[#F79D2B] mb-4" />
+      <p className="uppercase text-sm text-gray-500 tracking-widest">
+        THE WELDFOX COMPANY
+      </p>
+      <h2 className="text-3xl md:text-4xl font-bold text-[#0f1f3e] mt-2">
+        Our Satisfied & <br /> Happy Customers
+      </h2>
+      <p className="text-gray-600 mt-4">
+        Veniam quis nostrud exercitation ullamco laboris nisi ut aliquip exa aute irure
+        dolor in voluptate velit esse cillum dolore.
+      </p>
+    </div>
 
-        {/* Right: Cards Section (shifted slightly down) */}
-        <div className="flex flex-col items-center mt-4 md:mt-12">
-          <div className="flex gap-8 flex-nowrap justify-center overflow-x-auto">
-            {visibleTestimonials.map((item, index) => (
-              <div
-                key={index}
-                className="bg-[#f7f7f7] p-8 rounded-md w-[400px] h-[480] shadow-md transition-all duration-300 flex-shrink-0"
-              >
-                <p className="text-gray-700 mb-6">{item.review}</p>
-                <div className="flex items-center gap-4">
-                  <img
-                    src={item.image}
-                    alt={item.name}
-                    className="w-14 h-14 rounded-full object-cover"
-                  />
-                  <div>
-                    <h4 className="font-semibold text-[#0f1f3e]">{item.name}</h4>
-                    <p className="text-sm text-gray-500">{item.location}</p>
-                  </div>
-                </div>
-                <div className="flex mt-3 text-[#F79D2B]">
-                  {[...Array(item.stars)].map((_, idx) => (
-                    <FaStar key={idx} />
-                  ))}
-                </div>
+    {/* Right: Cards */}
+    <div className="flex flex-col items-center w-full">
+      {/* Testimonials Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10 w-full">
+        {visibleTestimonials.map((item, index) => (
+          <div
+            key={index}
+            className="bg-[#f7f7f7] p-6 rounded-md w-full shadow-md transition-all duration-300"
+          >
+            <p className="text-gray-700 mb-6 text-sm md:text-base">{item.review}</p>
+            <div className="flex items-center gap-4">
+              <img
+                src={item.image}
+                alt={item.name}
+                className="w-14 h-14 rounded-full object-cover"
+              />
+              <div>
+                <h4 className="font-semibold text-[#0f1f3e]">{item.name}</h4>
+                <p className="text-sm text-gray-500">{item.location}</p>
               </div>
-            ))}
+            </div>
+            <div className="flex mt-3 text-[#F79D2B]">
+              {[...Array(item.stars)].map((_, idx) => (
+                <FaStar key={idx} />
+              ))}
+            </div>
           </div>
-
-          {/* Buttons Below Cards */}
-          <div className="flex justify-center gap-4 mt-8">
-            <button
-              onClick={handlePrev}
-              className="p-3 border border-gray-300 rounded-full hover:bg-[#0f1f3e] hover:text-white transition"
-            >
-              <FaChevronLeft />
-            </button>
-            <button
-              onClick={handleNext}
-              className="p-3 border border-gray-300 rounded-full hover:bg-[#0f1f3e] hover:text-white transition"
-            >
-              <FaChevronRight />
-            </button>
-          </div>
-        </div>
+        ))}
       </div>
-    </section>
+
+      {/* Navigation Buttons */}
+      <div className="flex justify-center gap-4 mt-8">
+        <button
+          onClick={handlePrev}
+          className="p-3 border border-gray-300 rounded-full hover:bg-[#0f1f3e] hover:text-white transition"
+        >
+          <FaChevronLeft />
+        </button>
+        <button
+          onClick={handleNext}
+          className="p-3 border border-gray-300 rounded-full hover:bg-[#0f1f3e] hover:text-white transition"
+        >
+          <FaChevronRight />
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
   );
 };
 

@@ -12,7 +12,8 @@ const Counting = () => {
   const commonDuration = 2; // seconds
 
   return (
-    <section className="w-[90%] mx-auto py-10" ref={ref}>
+    <section className="w-full max-w-7xl px-4 mx-auto py-10" ref={ref}>
+
       {/* Top Gray Line */}
       <div className="border-t border-gray-300 mb-10 w-full"></div>
 
@@ -23,7 +24,7 @@ const Counting = () => {
           <div className="flex items-center gap-2">
             <FaCog size={40} className="text-[#F79D2B]" />
             <div className="text-6xl font-semibold text-[#0f1f3e]">
-              {inView && <CountUp start={0} end={25} duration={commonDuration} />}+
+              {inView && <CountUp start={0} end={15} duration={commonDuration} />}+
             </div>
           </div>
           <p className="text-gray-600 text-lg">Years Of Experience</p>

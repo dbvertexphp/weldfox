@@ -25,3 +25,12 @@ export const slideUpVariants = {
 	  },
 	},
   };
+
+  export const staggerContainer = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.3, // time between child animations
+    },
+  },
+};

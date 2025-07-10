@@ -14,7 +14,7 @@ const Experience = () => {
           />
           {/* Overlapping White Box */}
           <div className="absolute inset-6 bg-white shadow-md flex flex-col justify-center items-center p-4">
-            <p className="text-9xl font-bold text-[#F79D2B] leading-none">25</p>
+            <p className="text-9xl font-bold text-[#F79D2B] leading-none">15</p>
             <p className="text-sm mt-1 text-center text-gray-600 leading-tight tracking-wider uppercase">
               Years of <br /> Weldfox Experience
             </p>

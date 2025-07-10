@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Banner from "@/components/Banner";
 import Header from "@/components/Header";
+import StickyHeader from "@/components/StickyHeader";
 import Experience from "@/components/Experience";
 import Counting from "@/components/Counting";
 import Services from "@/components/Services";
@@ -8,41 +9,57 @@ import Gallery from "@/components/Gallery";
 import Process from "@/components/Process";
 import Testimonials from "@/components/Testimonials";
 import Video from "@/components/Video";
+import Footer from "@/components/Footer";
 
 const Index = () => {
-  const [isHeaderVisible, setIsHeaderVisible] = useState(true);
+  const headerRef = useRef<HTMLDivElement>(null);
+  const [showSticky, setShowSticky] = useState(false);
 
-  // Optional: Handle scroll to toggle header visibility
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsHeaderVisible(false);
-      } else {
-        setIsHeaderVisible(true);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        // Show sticky only when header is fully out of view
+        setShowSticky(!entry.isIntersecting);
+      },
+      {
+        root: null,
+        threshold: 1.0,
+      }
+    );
+
+    if (headerRef.current) {
+      observer.observe(headerRef.current);
+    }
+
+    return () => {
+      if (headerRef.current) {
+        observer.unobserve(headerRef.current);
       }
     };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <div className="min-h-screen">
-      <div
-        className={`fixed top-0 left-0 w-full transition-transform duration-300 ease-in-out z-50 ${
-          isHeaderVisible ? "translate-y-6" : "-translate-y-full"
-        }`}
-      >
+    <div className="min-h-screen relative bg-white">
+      {/* Sticky Header */}
+      {showSticky && <StickyHeader />}
+
+      {/* Main Header */}
+      <div ref={headerRef} className="absolute top-0 left-0 w-full z-50">
         <Header />
       </div>
+
+      {/* Banner Section */}
       <Banner />
+
+      {/* Main Content */}
       <Experience />
-      <Counting/>
+      <Counting />
       <Services />
       <Gallery />
-      <Process/>
-      <Testimonials/>
-      <Video/>
+      <Process />
+      <Testimonials />
+      <Video />
+      <Footer />
     </div>
   );
 };

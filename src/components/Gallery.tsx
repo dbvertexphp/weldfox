@@ -65,20 +65,21 @@ const Gallery = () => {
       </div>
 
       {/* Nav Buttons */}
-      <div className="flex justify-center gap-4 mt-8">
-        <button
-          onClick={handlePrev}
-          className="w-12 h-12 border border-gray-400 hover:bg-[#0f1f3e] hover:text-white text-gray-600 transition"
-        >
-          <FaChevronLeft />
-        </button>
-        <button
-          onClick={handleNext}
-          className="w-12 h-12 border border-gray-400 hover:bg-[#0f1f3e] hover:text-white text-gray-600 transition"
-        >
-          <FaChevronRight />
-        </button>
-      </div>
+      <div className="flex justify-center gap-2 mt-8">
+  <button
+    onClick={handlePrev}
+    className="w-12 h-12 flex items-center justify-center border border-gray-400 hover:bg-[#0f1f3e] hover:text-white text-gray-600 transition"
+  >
+    <FaChevronLeft />
+  </button>
+  <button
+    onClick={handleNext}
+    className="w-12 h-12 flex items-center justify-center border border-gray-400 hover:bg-[#0f1f3e] hover:text-white text-gray-600 transition"
+  >
+    <FaChevronRight />
+  </button>
+</div>
+
 
       {/* Modal */}
       {selectedImage && (

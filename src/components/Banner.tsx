@@ -6,13 +6,33 @@ const slides = [
   { id: 2, image: "/banner2.jpg" },
 ];
 
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.3,
+    },
+  },
+};
+
+const childVariants = {
+  hidden: { opacity: 0, y: -40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
+    },
+  },
+};
+
 const Banner = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [scrollOffset, setScrollOffset] = useState(0);
   const startX = useRef(null);
   const isDragging = useRef(false);
 
-  // Auto Slide (every 3 seconds)
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
@@ -20,7 +40,6 @@ const Banner = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // Scroll effect
   useEffect(() => {
     const handleScroll = () => setScrollOffset(window.scrollY);
     window.addEventListener("scroll", handleScroll);
@@ -38,10 +57,8 @@ const Banner = () => {
     const diff = startX.current - endX;
 
     if (diff > 50) {
-      // Swipe Left
       setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
     } else if (diff < -50) {
-      // Swipe Right
       setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
     }
     isDragging.current = false;
@@ -53,7 +70,7 @@ const Banner = () => {
 
   return (
     <section
-      className="relative h-[700px] sm:h-[650px] md:h-[750px] lg:h-[850px] overflow-hidden"
+      className="relative h-[600px] sm:h-[650px] md:h-[750px] lg:h-[850px] overflow-hidden px-4 sm:px-6 lg:px-8"
       onMouseDown={handleDragStart}
       onMouseUp={handleDragEnd}
       onTouchStart={handleDragStart}
@@ -65,53 +82,57 @@ const Banner = () => {
         style={{ backgroundImage: `url('${current.image}')` }}
       />
 
-      {/* Grey Overlay */}
+      {/* Overlays */}
       <div className="absolute inset-0 bg-[#787878] opacity-30 z-10" />
-
-      {/* Black Overlay */}
       <div className="absolute inset-0 bg-black/50 z-20" />
 
-      {/* Heading + Buttons */}
+      {/* Content */}
       <motion.div
+        variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="relative z-30 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-[220px] sm:pt-[240px] md:pt-[260px] text-center"
+        className="relative z-30 w-full max-w-7xl mx-auto pt-[140px] sm:pt-[200px] md:pt-[240px] text-center"
       >
-        <div className="inline-block">
-          <h1
-            className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mt-10 text-white uppercase tracking-wide transition-all duration-500 ease-in-out"
-            style={{ transform: `translateX(${translateX}px)`, opacity }}
-          >
-            TRUSTWORTHY & EFFICIENT
-          </h1>
-          <h2 className="mt-4 text-lg sm:text-2xl md:text-5xl text-white tracking-widest font-light">
-            HANDYMAN SERVICES
-          </h2>
+        <motion.h1
+          variants={childVariants}
+          className="text-xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white uppercase tracking-wide px-2"
+          style={{ transform: `translateX(${translateX}px)`, opacity }}
+        >
+          TRUSTWORTHY & EFFICIENT
+        </motion.h1>
 
-          {/* Buttons */}
-          <div className="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">
-            <button className="relative overflow-hidden group text-white font-semibold px-6 py-3 rounded bg-[#F79D2B]">
-              <span className="relative z-10 transition-colors duration-500 group-hover:text-[#F79D2B]">
-                LEARN MORE
-              </span>
-              <span className="absolute inset-0 bg-white w-0 group-hover:w-full transition-all duration-500 ease-in-out"></span>
-            </button>
+        <motion.h2
+          variants={childVariants}
+          className="mt-3 text-lg sm:text-2xl md:text-5xl text-white font-light px-4"
+        >
+          HANDYMAN SERVICES
+        </motion.h2>
 
-            <button className="relative overflow-hidden group text-white font-semibold px-6 py-3 rounded border border-white">
-              <span className="relative z-10 transition-colors duration-500 group-hover:text-[#0f1f3e]">
-                OUR SERVICES
-              </span>
-              <span className="absolute inset-0 bg-white w-0 group-hover:w-full transition-all duration-500 ease-in-out"></span>
-            </button>
-          </div>
-        </div>
+        <motion.div
+          variants={childVariants}
+          className="mt-8 flex flex-col sm:flex-row justify-center items-center gap-4 px-4"
+        >
+          <button className="relative overflow-hidden group text-white font-semibold px-6 py-3 rounded bg-[#F79D2B]">
+            <span className="relative z-10 group-hover:text-[#F79D2B] transition-colors duration-500">
+              LEARN MORE
+            </span>
+            <span className="absolute inset-0 bg-white w-0 group-hover:w-full transition-all duration-500 ease-in-out"></span>
+          </button>
+
+          <button className="relative overflow-hidden group text-white font-semibold px-6 py-3 rounded border border-white">
+            <span className="relative z-10 group-hover:text-[#0f1f3e] transition-colors duration-500">
+              OUR SERVICES
+            </span>
+            <span className="absolute inset-0 bg-white w-0 group-hover:w-full transition-all duration-500 ease-in-out"></span>
+          </button>
+        </motion.div>
       </motion.div>
 
-      {/* Bottom 3 Headings */}
+      {/* Bottom Menu */}
       <div className="absolute bottom-0 left-0 right-0 z-40">
         <div className="container mx-auto px-4 py-6">
-          <div className="flex justify-center items-center gap-10 sm:gap-20 text-white text-base sm:text-lg">
+          <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-10 text-white text-sm sm:text-base text-center">
             <span className="cursor-pointer hover:text-[#F79D2B] transition-colors duration-300">
               Rolling Shutters
             </span>
