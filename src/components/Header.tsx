@@ -7,6 +7,7 @@ import {
   FaBars,
   FaTimes,
 } from "react-icons/fa";
+import { Link } from "react-router-dom"; 
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -14,7 +15,7 @@ const Header = () => {
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "About", path: "/pages/About-us" },
-    { name: "Services", path: "/services" },
+    { name: "Services", path: "/pages/Services/Services" },
     { name: "Projects", path: "/projects" },
     { name: "News", path: "/news" },
     { name: "Contact", path: "/contact" },
@@ -22,7 +23,7 @@ const Header = () => {
 
   return (
     <div className="w-full text-white">
-      {/* 🔵 Desktop Top Header: Logo + Contact Info */}
+      {/* 🔵 Desktop Top Header */}
       <div className="hidden lg:flex items-center justify-between px-[200px] py-0 text-white h-[100px] max:w-6xl">
         <img
           src="/logo1.PNG"
@@ -54,7 +55,7 @@ const Header = () => {
         </div>
       </div>
 
-      {/* 🔵 Mobile Header: Logo + Hamburger */}
+      {/* 🔵 Mobile Header */}
       <div className="lg:hidden bg-[#1a2940] px-4 py-3 flex items-center justify-between">
         <img
           src="/logo1.PNG"
@@ -69,7 +70,7 @@ const Header = () => {
         </button>
       </div>
 
-      {/* 🔵 Nav Bar (Links + Search + Quote) - Desktop Only */}
+      {/* 🔵 Desktop Nav Bar */}
       <div className="hidden lg:flex justify-center -mt-1">
         <div className="w-[90%] max-w-6xl bg-[#1a2940] flex flex-col lg:flex-row items-start lg:items-center justify-between px-4 lg:px-5 py-6">
           <div
@@ -84,7 +85,7 @@ const Header = () => {
             ))}
           </div>
 
-          {/* Desktop Only: Search + Quote */}
+          {/* Search + Quote */}
           <div className="hidden lg:flex items-center space-x-4">
             <FaSearch className="cursor-pointer" />
             <button className="relative overflow-hidden group text-white font-semibold px-4 py-2 rounded bg-[#F79D2B]">
@@ -97,7 +98,7 @@ const Header = () => {
         </div>
       </div>
 
-      {/* 🔵 Mobile Fullscreen Menu */}
+      {/* 🔵 Mobile Fullscreen Menu ✅ (Fixed with <Link>) */}
       {menuOpen && (
         <div className="fixed inset-0 z-50 bg-white overflow-y-auto lg:hidden">
           <div className="px-5 py-4 flex items-center justify-between border-b">
@@ -115,7 +116,13 @@ const Header = () => {
                 key={index}
                 className="flex justify-between items-center px-5 py-4 text-base hover:bg-gray-50 text-black"
               >
-                <a href={item.path}>{item.name}</a>
+                <Link
+                  to={item.path}
+                  onClick={() => setMenuOpen(false)}
+                  className="w-full"
+                >
+                  {item.name}
+                </Link>
               </li>
             ))}
           </ul>

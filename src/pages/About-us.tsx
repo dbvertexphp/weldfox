@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import Counting from "@/components/Counting";
 import FeatureCards from "@/components/FeatureCards";
 import { FaCheck } from "react-icons/fa";
+import StickyHeader from "@/components/StickyHeader";
 
 const AboutUs = () => {
   return (
@@ -24,6 +25,7 @@ const AboutUs = () => {
         />
         <div className="absolute inset-0 bg-[#1a2940] opacity-80"></div>
       </div>
+      <StickyHeader/>
 
       {/* 🔹 Centered Content Box */}
       <div className="relative z-10 mt-[-270px] flex justify-center items-center px-4 min-h-[calc(100vh-300px)]">

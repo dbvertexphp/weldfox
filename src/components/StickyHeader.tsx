@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 const StickyHeader = () => {
   const [isStickyVisible, setIsStickyVisible] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  const bannerHeight = 700; // match your Banner height
+  const bannerHeight = 700;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,6 +28,10 @@ const StickyHeader = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
     <>
       {/* 👇 Sticky Header */}
@@ -36,16 +43,36 @@ const StickyHeader = () => {
         }`}
       >
         <div className="max-w-6xl mx-auto px-4 py-5 flex items-center justify-between">
+          {/* Logo */}
           <img src="/logo1.PNG" alt="Logo" className="h-14 w-auto" />
+
+          {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-6 text-lg font-medium">
-            <a href="/" className="text-[#1a2940] hover:text-[#f79d2b] transition">Home</a>
-            <a href="/pages/About-us" className="text-[#1a2940] hover:text-[#f79d2b] transition">About</a>
-            <a href="/services" className="text-[#1a2940] hover:text-[#f79d2b] transition">Services</a>
-            <a href="/projects" className="text-[#1a2940] hover:text-[#f79d2b] transition">Projects</a>
-            <a href="/news" className="text-[#1a2940] hover:text-[#f79d2b] transition">News</a>
-            <a href="/contact" className="text-[#1a2940] hover:text-[#f79d2b] transition">Contact</a>
+            <Link to="/" className="text-[#1a2940] hover:text-[#f79d2b] transition">Home</Link>
+            <Link to="/pages/About-us" className="text-[#1a2940] hover:text-[#f79d2b] transition">About</Link>
+            <Link to="/pages/Services/Services" className="text-[#1a2940] hover:text-[#f79d2b] transition">Services</Link>
+            <Link to="/projects" className="text-[#1a2940] hover:text-[#f79d2b] transition">Projects</Link>
+            <Link to="/news" className="text-[#1a2940] hover:text-[#f79d2b] transition">News</Link>
+            <Link to="/contact" className="text-[#1a2940] hover:text-[#f79d2b] transition">Contact</Link>
           </nav>
+
+          {/* Mobile Hamburger Icon */}
+          <div className="md:hidden text-2xl text-[#1a2940] cursor-pointer" onClick={toggleMenu}>
+            {menuOpen ? <FaTimes /> : <FaBars />}
+          </div>
         </div>
+
+        {/* Mobile Menu Dropdown */}
+        {menuOpen && (
+          <div className="md:hidden bg-white shadow-md px-6 py-4 flex flex-col space-y-4 text-base font-medium">
+            <Link to="/" className="text-[#1a2940] hover:text-[#f79d2b]" onClick={toggleMenu}>Home</Link>
+            <Link to="/pages/About-us" className="text-[#1a2940] hover:text-[#f79d2b]" onClick={toggleMenu}>About</Link>
+            <Link to="/pages/Services/Services" className="text-[#1a2940] hover:text-[#f79d2b]" onClick={toggleMenu}>Services</Link>
+            <Link to="/projects" className="text-[#1a2940] hover:text-[#f79d2b]" onClick={toggleMenu}>Projects</Link>
+            <Link to="/news" className="text-[#1a2940] hover:text-[#f79d2b]" onClick={toggleMenu}>News</Link>
+            <Link to="/contact" className="text-[#1a2940] hover:text-[#f79d2b]" onClick={toggleMenu}>Contact</Link>
+          </div>
+        )}
       </header>
     </>
   );

@@ -8,7 +8,7 @@ const servicesData = [
   { 
     title: "Gates", 
     link: "/services/fabrication",
-    img:"/gate.jpg",
+    img:"/gates.jpg",
     description: "Custom-designed gates offer a perfect blend of security and elegance, tailored to enhance property entrances with high-quality materials and craftsmanship for lasting durability and aesthetic appeal."
   },
   { 

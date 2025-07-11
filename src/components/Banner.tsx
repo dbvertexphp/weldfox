@@ -92,7 +92,7 @@ const Banner = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="relative z-30 w-full max-w-7xl mx-auto pt-[140px] sm:pt-[200px] md:pt-[240px] text-center"
+        className="relative z-30 w-full max-w-7xl mx-auto pt-[140px] sm:pt-[200px] md:pt-[240px] text-center mt-[100px]"
       >
         <motion.h1
           variants={childVariants}
@@ -111,7 +111,7 @@ const Banner = () => {
 
         <motion.div
           variants={childVariants}
-          className="mt-8 flex flex-col sm:flex-row justify-center items-center gap-4 px-4"
+          className="mt-[50px] flex flex-col sm:flex-row justify-center items-center gap-4 px-4"
         >
           <button className="relative overflow-hidden group text-white font-semibold px-6 py-3 rounded bg-[#F79D2B]">
             <span className="relative z-10 group-hover:text-[#F79D2B] transition-colors duration-500">

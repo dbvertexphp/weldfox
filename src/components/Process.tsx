@@ -102,7 +102,7 @@ const Process = () => {
                 </motion.div>
 
                 {/* Text */}
-                <h3 className="text-xl font-semibold text-white mt-10">{step.title}</h3>
+                <h3 className="text-xl font-md text-white mt-10">{step.title}</h3>
                 <p className="text-sm text-[#c0c0c0] mt-2 px-4">{step.description}</p>
               </div>
 
