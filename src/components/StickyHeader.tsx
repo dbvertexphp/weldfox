@@ -51,9 +51,9 @@ const StickyHeader = () => {
             <Link to="/" className="text-[#1a2940] hover:text-[#f79d2b] transition">Home</Link>
             <Link to="/pages/About-us" className="text-[#1a2940] hover:text-[#f79d2b] transition">About</Link>
             <Link to="/pages/Services/Services" className="text-[#1a2940] hover:text-[#f79d2b] transition">Services</Link>
-            <Link to="/projects" className="text-[#1a2940] hover:text-[#f79d2b] transition">Projects</Link>
+            <Link to="/pages/Projects" className="text-[#1a2940] hover:text-[#f79d2b] transition">Projects</Link>
             <Link to="/news" className="text-[#1a2940] hover:text-[#f79d2b] transition">News</Link>
-            <Link to="/contact" className="text-[#1a2940] hover:text-[#f79d2b] transition">Contact</Link>
+            <Link to="/pages/Contact" className="text-[#1a2940] hover:text-[#f79d2b] transition">Contact</Link>
           </nav>
 
           {/* Mobile Hamburger Icon */}
@@ -70,7 +70,7 @@ const StickyHeader = () => {
             <Link to="/pages/Services/Services" className="text-[#1a2940] hover:text-[#f79d2b]" onClick={toggleMenu}>Services</Link>
             <Link to="/projects" className="text-[#1a2940] hover:text-[#f79d2b]" onClick={toggleMenu}>Projects</Link>
             <Link to="/news" className="text-[#1a2940] hover:text-[#f79d2b]" onClick={toggleMenu}>News</Link>
-            <Link to="/contact" className="text-[#1a2940] hover:text-[#f79d2b]" onClick={toggleMenu}>Contact</Link>
+            <Link to="/pages/Contact" className="text-[#1a2940] hover:text-[#f79d2b]" onClick={toggleMenu}>Contact</Link>
           </div>
         )}
       </header>

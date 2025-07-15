@@ -7,7 +7,7 @@ import {
   FaBars,
   FaTimes,
 } from "react-icons/fa";
-import { Link } from "react-router-dom"; 
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -16,9 +16,9 @@ const Header = () => {
     { name: "Home", path: "/" },
     { name: "About", path: "/pages/About-us" },
     { name: "Services", path: "/pages/Services/Services" },
-    { name: "Projects", path: "/projects" },
+    { name: "Projects", path: "/pages/projects" },
     { name: "News", path: "/news" },
-    { name: "Contact", path: "/contact" },
+    { name: "Contact", path: "/pages/Contact" },
   ];
 
   return (
@@ -88,12 +88,14 @@ const Header = () => {
           {/* Search + Quote */}
           <div className="hidden lg:flex items-center space-x-4">
             <FaSearch className="cursor-pointer" />
-            <button className="relative overflow-hidden group text-white font-semibold px-4 py-2 rounded bg-[#F79D2B]">
-              <span className="relative z-10 transition-colors duration-500 group-hover:text-[#F79D2B]">
-                GET A QUOTE
-              </span>
-              <span className="absolute inset-0 bg-white w-0 group-hover:w-full transition-all duration-500 ease-in-out"></span>
-            </button>
+            <Link to="/pages/Contact">
+              <button className="relative overflow-hidden group text-white font-semibold px-4 py-2 rounded bg-[#F79D2B]">
+                <span className="relative z-10 transition-colors duration-500 group-hover:text-[#F79D2B]">
+                  GET A QUOTE
+                </span>
+                <span className="absolute inset-0 bg-white w-0 group-hover:w-full transition-all duration-500 ease-in-out"></span>
+              </button>
+            </Link>
           </div>
         </div>
       </div>

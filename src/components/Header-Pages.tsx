@@ -53,9 +53,9 @@ const HeaderPages = () => {
           <a href="/" className="hover:text-[#f79d2b] text-xl">Home</a>
           <a href="/pages/About-us" className="hover:text-[#f79d2b] text-xl">About</a>
           <a href="/pages/Services/Services" className="hover:text-[#f79d2b] text-xl">Services</a>
-          <a href="#" className="hover:text-[#f79d2b] text-xl">Projects</a>
+          <a href="/pages/Projects" className="hover:text-[#f79d2b] text-xl">Projects</a>
           <a href="#" className="hover:text-[#f79d2b] text-xl">News</a>
-          <a href="#" className="hover:text-[#f79d2b] text-xl">Contact</a>
+          <a href="/pages/Contact" className="hover:text-[#f79d2b] text-xl">Contact</a>
         </nav>
 
         {/* Right Icons - Desktop */}
@@ -79,7 +79,7 @@ const HeaderPages = () => {
             <a href="/pages/Services/Services" className="text-black hover:text-[#f79d2b]">Services</a>
             <a href="#" className="text-black hover:text-[#f79d2b]">Projects</a>
             <a href="#" className="text-black hover:text-[#f79d2b]">News</a>
-            <a href="#" className="text-black hover:text-[#f79d2b]">Contact</a>
+            <a href="/pages/Contact" className="text-black hover:text-[#f79d2b]">Contact</a>
 
             <div className="flex items-center justify-between pt-4 border-t">
               <FaSearch className="text-[#1a2940] cursor-pointer" />

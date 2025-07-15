@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const slides = [
   { id: 1, image: "/banner1.jpg" },
@@ -113,19 +114,23 @@ const Banner = () => {
           variants={childVariants}
           className="mt-[50px] flex flex-col sm:flex-row justify-center items-center gap-4 px-4"
         >
-          <button className="relative overflow-hidden group text-white font-semibold px-6 py-3 rounded bg-[#F79D2B]">
-            <span className="relative z-10 group-hover:text-[#F79D2B] transition-colors duration-500">
-              LEARN MORE
-            </span>
-            <span className="absolute inset-0 bg-white w-0 group-hover:w-full transition-all duration-500 ease-in-out"></span>
-          </button>
+          <Link to="/pages/About-us">
+            <button className="relative overflow-hidden group text-white font-semibold px-6 py-3 rounded bg-[#F79D2B]">
+              <span className="relative z-10 group-hover:text-[#F79D2B] transition-colors duration-500">
+                LEARN MORE
+              </span>
+              <span className="absolute inset-0 bg-white w-0 group-hover:w-full transition-all duration-500 ease-in-out"></span>
+            </button>
+          </Link>
 
-          <button className="relative overflow-hidden group text-white font-semibold px-6 py-3 rounded border border-white">
-            <span className="relative z-10 group-hover:text-[#0f1f3e] transition-colors duration-500">
-              OUR SERVICES
-            </span>
-            <span className="absolute inset-0 bg-white w-0 group-hover:w-full transition-all duration-500 ease-in-out"></span>
-          </button>
+          <Link to="/pages/Services/Services">
+            <button className="relative overflow-hidden group text-white font-semibold px-6 py-3 rounded border border-white">
+              <span className="relative z-10 group-hover:text-[#0f1f3e] transition-colors duration-500">
+                OUR SERVICES
+              </span>
+              <span className="absolute inset-0 bg-white w-0 group-hover:w-full transition-all duration-500 ease-in-out"></span>
+            </button>
+          </Link>
         </motion.div>
       </motion.div>
 
@@ -133,15 +138,24 @@ const Banner = () => {
       <div className="absolute bottom-0 left-0 right-0 z-40">
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-10 text-white text-sm sm:text-base text-center">
-            <span className="cursor-pointer hover:text-[#F79D2B] transition-colors duration-300">
+            <Link
+              to="/services/rolling-shutters"
+              className="cursor-pointer hover:text-[#F79D2B] transition-colors duration-300"
+            >
               Rolling Shutters
-            </span>
-            <span className="cursor-pointer hover:text-[#F79D2B] transition-colors duration-300">
+            </Link>
+            <Link
+              to="/services/entrance-automation"
+              className="cursor-pointer hover:text-[#F79D2B] transition-colors duration-300"
+            >
               Entrance Automation
-            </span>
-            <span className="cursor-pointer hover:text-[#F79D2B] transition-colors duration-300">
+            </Link>
+            <Link
+              to="/services/general-fabrication"
+              className="cursor-pointer hover:text-[#F79D2B] transition-colors duration-300"
+            >
               General Fabrication
-            </span>
+            </Link>
           </div>
         </div>
       </div>

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import { FaPlay } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 
@@ -17,7 +18,7 @@ const Video = () => {
       {/* 🔹 Dark Overlay Content */}
       <div className="absolute inset-0 bg-[#1a2940]/95 z-10">
         <div className="max-w-7xl mx-auto h-full flex justify-between items-center flex-col lg:flex-row px-6 gap-10">
-          {/* 🔸 Left Side Content (Centered Vertically & Horizontally in Left Area) */}
+          {/* 🔸 Left Side Content */}
           <div className="flex-1 flex justify-center items-center h-full">
             <div className="text-white flex flex-col justify-center items-center text-center max-w-xl">
               {/* Play Button */}
@@ -45,14 +46,20 @@ const Video = () => {
             </div>
           </div>
 
-          {/* 🔸 Right Side Character Image */}
-          <div className="flex-1 flex items-center justify-center">
+          {/* 🔸 Right Side Animated Image */}
+          <motion.div
+            className="flex-1 flex items-center justify-center"
+            initial={{ x: 100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
             <img
               src="/videoimg.png"
               alt="Character"
-              className="max-w-[400px] w-full"
+              className="max-w-[450px] w-full"
             />
-          </div>
+          </motion.div>
         </div>
       </div>
 

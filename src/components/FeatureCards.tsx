@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { FaHome, FaUserCog, FaTools } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
@@ -31,9 +32,17 @@ const FeatureCards = () => {
     <div className="w-full bg-white py-20 px-4 flex justify-center">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl w-full">
         {cards.map((card, index) => (
-          <div
+          <motion.div
             key={index}
             className="bg-white p-8 rounded-xl shadow-xl hover:shadow-2xl transition duration-300 flex flex-col justify-between h-[300px] text-center"
+            initial={{ y: 60, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{
+              duration: 0.8,
+              delay: index * 0.2,
+              ease: "easeInOut",
+            }}
+            viewport={{ once: true }}
           >
             {/* Icon */}
             <div className="flex justify-center mb-4">
@@ -59,7 +68,7 @@ const FeatureCards = () => {
                 {card.link} <span className="text-lg">&rsaquo;</span>
               </Link>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>

@@ -41,7 +41,9 @@ const Gallery = () => {
         <p className="text-[#8a8a8a] max-w-xl mx-auto mb-2 tracking-wider uppercase">
           THE WELDFOX COMPANY
         </p>
-        <h2 className="text-4xl font-bold text-[#0f1f3e]">Our Projects Gallery</h2>
+        <h2 className="text-4xl font-bold text-[#0f1f3e]">
+          Our Projects Gallery
+        </h2>
         <p className="text-[#8a8a8a] mt-4 max-w-xl mx-auto">
           Lorem ipsum dolor sit amet consectetur adipisicing elit.
         </p>
@@ -66,20 +68,19 @@ const Gallery = () => {
 
       {/* Nav Buttons */}
       <div className="flex justify-center gap-2 mt-8">
-  <button
-    onClick={handlePrev}
-    className="w-12 h-12 flex items-center justify-center border border-gray-400 hover:bg-[#0f1f3e] hover:text-white text-gray-600 transition"
-  >
-    <FaChevronLeft />
-  </button>
-  <button
-    onClick={handleNext}
-    className="w-12 h-12 flex items-center justify-center border border-gray-400 hover:bg-[#0f1f3e] hover:text-white text-gray-600 transition"
-  >
-    <FaChevronRight />
-  </button>
-</div>
-
+        <button
+          onClick={handlePrev}
+          className="w-12 h-12 flex items-center justify-center border border-gray-400 hover:bg-[#0f1f3e] hover:text-white text-gray-600 transition"
+        >
+          <FaChevronLeft />
+        </button>
+        <button
+          onClick={handleNext}
+          className="w-12 h-12 flex items-center justify-center border border-gray-400 hover:bg-[#0f1f3e] hover:text-white text-gray-600 transition"
+        >
+          <FaChevronRight />
+        </button>
+      </div>
 
       {/* Modal */}
       {selectedImage && (
