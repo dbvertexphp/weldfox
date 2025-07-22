@@ -1,0 +1,29 @@
+#!/bin/bash
+set -e
+
+echo "Deployment started..."
+
+cd /var/www/weldfoxfolder/weldfox
+
+# Cancel any stuck merge/rebase state
+git merge --abort || true
+git rebase --abort || true
+
+# Clean up the local state to avoid conflicts
+git reset --hard HEAD
+git clean -fd
+
+# Pull latest changes
+git pull origin live_server
+echo "New changes copied to server!"
+
+echo "Installing Dependencies..."
+npm install --yes
+
+echo "Creating Production Build..."
+npm run build
+
+# echo "PM2 Reload"
+# pm2 reload myapp
+
+echo "Deployment Finished!"
