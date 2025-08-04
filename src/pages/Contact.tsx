@@ -18,12 +18,7 @@ const Contact = () => {
           className="w-full h-[300px] object-cover"
         />
         <div className="absolute inset-0 bg-[#1a2940] opacity-80"></div>
-      </div>
-
-      <StickyHeader />
-
-      {/* Title */}
-      <div className="relative z-10 mt-[-270px] flex justify-center items-center px-4 min-h-[calc(100vh-300px)]">
+           <div className="absolute top-[200px] md:top-[150px] left-1/2 transform -translate-x-1/2 z-10 px-4 w-full flex justify-center">
         <div className="bg-white w-full max-w-[700px] shadow-lg p-6 md:p-10 text-center">
           <h2 className="text-4xl md:text-6xl font-md text-gray-900 mb-2">
             Contact Us
@@ -45,12 +40,17 @@ const Contact = () => {
           </p>
         </div>
       </div>
+      </div>
+
+      <StickyHeader />
+
+      {/* Title */}
+   
 
       {/* Form + Info Section with Animation */}
-      <div className="w-full px-4 py-16 flex justify-center items-start bg-white mt-[-1700px] md:mt-[-100px] ml-0 md:ml-[100px]">
+      <div className="w-full px-4 py-16 flex justify-center items-start bg-white mt-[60px] md:mt-[50px]">
         <div className="w-full max-w-6xl flex flex-col md:flex-row gap-[70px] px-4 md:px-0 mx-auto">
           
-          {/* ✅ Animated Left Section (Form) */}
           <motion.div
             className="w-full md:w-1/2"
             initial={{ x: 100, opacity: 0 }}

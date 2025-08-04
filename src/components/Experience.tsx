@@ -36,6 +36,8 @@ const Experience = () => {
         </div>
       </div>
 
+      
+
       {/* RIGHT CARDS */}
       <div className="lg:col-span-4 relative z-20 mt-10 lg:-mt-24">
         <div className="bg-white shadow-lg px-6 py-8 rounded-sm h-[540px] flex flex-col">
@@ -92,6 +94,7 @@ const Experience = () => {
           </div>
         </div>
       </div>
+      
       <div className="lg:col-span-8 lg:col-start-1 mt-2">
         <p className="text-gray-500 text-sm leading-6 max-w-[700px] -mt-[150px]">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat

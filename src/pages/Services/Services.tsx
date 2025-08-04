@@ -33,10 +33,7 @@ const Services = () => {
           className="w-full h-[300px] object-cover"
         />
         <div className="absolute inset-0 bg-[#1a2940] opacity-80"></div>
-      </div>
-      <StickyHeader />
-
-      <div className="relative z-10 mt-[-270px] flex justify-center items-center px-4 min-h-[calc(100vh-300px)]">
+            <div className="absolute top-[200px] md:top-[150px] left-1/2 transform -translate-x-1/2 z-10 px-4 w-full flex justify-center">
         <div className="bg-white w-full max-w-[700px] shadow-lg p-6 md:p-10 text-center">
           <h2 className="text-4xl md:text-6xl font-md text-gray-900 mb-2">
             Our Services
@@ -51,8 +48,12 @@ const Services = () => {
           </p>
         </div>
       </div>
+      </div>
+      <StickyHeader />
 
-      <section className="w-full py-20 px-4 bg-white flex justify-center items-center text-center mt-[-70px]">
+  
+
+      <section className="w-full py-20 px-4 bg-white flex justify-center items-center text-center  mt-[60px] md:mt-[50px]">
         <div className="max-w-4xl">
           <p className="text-sm uppercase tracking-widest text-gray-400 mb-3">
             THE WELDFOX COMPANY

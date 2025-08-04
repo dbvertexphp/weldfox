@@ -25,6 +25,8 @@ import CoveringGrills from "./pages/Services/covering-grills";
 import ClayTiles from "./pages/Services/clay-tiles";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
+import { News } from "./pages/News";
+import { Quote } from "./pages/Quote";
 
 const queryClient = new QueryClient();
 
@@ -57,8 +59,8 @@ const App = () => (
               <Route path="/pages/Services/window-grills" element={<WindowGrills />} />
             <Route path="/pages/Projects" element={<Projects />} />
             <Route path="/pages/Contact" element={<Contact />} />
+            <Route path="/pages/news" element={<News/>} />
        
-
 
             <Route path="*" element={<NotFound />} />
           </Routes>

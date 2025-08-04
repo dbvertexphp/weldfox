@@ -52,7 +52,7 @@ const StickyHeader = () => {
             <Link to="/pages/About-us" className="text-[#1a2940] hover:text-[#f79d2b] transition">About</Link>
             <Link to="/pages/Services/Services" className="text-[#1a2940] hover:text-[#f79d2b] transition">Services</Link>
             <Link to="/pages/Projects" className="text-[#1a2940] hover:text-[#f79d2b] transition">Projects</Link>
-            <Link to="/news" className="text-[#1a2940] hover:text-[#f79d2b] transition">News</Link>
+            <Link to="/pages/news" className="text-[#1a2940] hover:text-[#f79d2b] transition">News</Link>
             <Link to="/pages/Contact" className="text-[#1a2940] hover:text-[#f79d2b] transition">Contact</Link>
           </nav>
 

@@ -100,7 +100,7 @@ const Banner = () => {
 					className="text-xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white uppercase tracking-wide px-2"
 					style={{ transform: `translateX(${translateX}px)`, opacity }}
 				>
-					YES NOW ITS AUTOMATIC & EFFICIENT
+					TRUSTWORTHY & EFFICIENT
 				</motion.h1>
 
 				<motion.h2
