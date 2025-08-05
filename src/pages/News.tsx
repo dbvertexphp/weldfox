@@ -6,7 +6,8 @@ import MailOutlineIcon from "@mui/icons-material/MailOutline";
 
 const news = [
       {
-            img: "/news-1.jpg",
+            // img: "/news-1.jpg",
+            img: "/news1.jpg",
             date: " APRIL 2, 2019",
             category: "GARDEN",
             userType: "Smartman",
@@ -15,7 +16,8 @@ const news = [
                   "Veniam quis nostrud exercitation ullamco laboris nisi ut aliquip exa aute dolor in reprehenderit in voluptate velit esse cillum",
       },
       {
-            img: "/news-2.jpg",
+            // img: "/news-2.jpg",
+            img: "/news2.jpg",
             date: " APRIL 2, 2019",
             category: "GARDEN",
             userType: "Smartman",
@@ -24,7 +26,8 @@ const news = [
                   "Veniam quis nostrud exercitation ullamco laboris nisi ut aliquip exa aute dolor in reprehenderit in voluptate velit esse cillum",
       },
       {
-            img: "/news-3.jpg",
+            // img: "/news-3.jpg",
+            img: "/news3.jpg",
             date: " APRIL 2, 2019",
             category: "GARDEN",
             userType: "Smartman",
@@ -33,7 +36,8 @@ const news = [
                   "Veniam quis nostrud exercitation ullamco laboris nisi ut aliquip exa aute dolor in reprehenderit in voluptate velit esse cillum",
       },
       {
-            img: "/news-4.jpg",
+            // img: "/news-4.jpg",
+            img: "/news4.jpeg",
             date: " APRIL 2, 2019",
             category: "GARDEN",
             userType: "Smartman",

@@ -46,7 +46,7 @@ const HeaderPages = () => {
       <div className="w-full h-[80px] flex items-center justify-between px-4 md:px-10 bg-white shadow relative">
         {/* Logo */}
         <div className="flex items-center space-x-2">
-          <img src="/logo1.PNG" alt="Logo" className="h-12 w-auto" />
+          <img src="/logo-1.jpeg" alt="Logo" className="h-12 w-auto" />
         </div>
 
         {/* Desktop Nav */}

@@ -56,7 +56,7 @@ const Services = () => {
       <section className="w-full py-20 px-4 bg-white flex justify-center items-center text-center  mt-[60px] md:mt-[50px]">
         <div className="max-w-4xl">
           <p className="text-sm uppercase tracking-widest text-gray-400 mb-3">
-            THE WELDFOX COMPANY
+            THE METAL & CRAFT  AUTOMATION COMPANY
           </p>
           <h2 className="text-2xl md:text-4xl font-bold text-[#1a2940] mb-4 leading-snug">
             Our projects are fully tested, background <br /> checked, license validated and insured with a <br />

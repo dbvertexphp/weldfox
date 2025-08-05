@@ -3,11 +3,16 @@ import { FaChevronLeft, FaChevronRight, FaTimes } from "react-icons/fa";
 
 // Replace with actual image paths
 const galleryImages = [
-  "/banner1.jpg",
-  "/banner2.jpg",
-  "/banner3.jpg",
-  "/banner4.jpg",
-  "/banner5.jpg",
+  // "/banner1.jpg",
+  // "/banner2.jpg",
+  // "/banner3.jpg",
+  // "/banner4.jpg",
+  // "/banner5.jpg",
+  "/banner1.webp",
+  "/banner2.webp",
+  "/banner-3.jpg",
+  "/banner4.webp",
+  "/banner5.webp"
 ];
 
 const Gallery = () => {
@@ -39,7 +44,7 @@ const Gallery = () => {
       {/* Heading Section */}
       <div className="text-center mt-20">
         <p className="text-[#8a8a8a] max-w-xl mx-auto mb-2 tracking-wider uppercase">
-          THE WELDFOX COMPANY
+          THE METAL & CRAFT AUTOMATION COMPANY
         </p>
         <h2 className="text-4xl font-bold text-[#0f1f3e]">
           Our Projects Gallery

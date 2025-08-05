@@ -26,9 +26,10 @@ const Header = () => {
       {/* 🔵 Desktop Top Header */}
       <div className="hidden lg:flex items-center justify-between px-[200px] py-0 text-white h-[100px] max:w-6xl">
         <img
-          src="/logo1.PNG"
+          // src="/logo1.PNG"
+          src='/logo-1.jpeg'
           alt="Logo"
-          className="h-[150px] w-[200px] object-contain ml-5"
+          className="h-[100px] w-[200px] object-contain ml-5"
         />
         <div className="flex space-x-6 text-sm mr-5">
           <div className="flex items-center space-x-2">

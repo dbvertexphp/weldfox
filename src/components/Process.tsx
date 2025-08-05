@@ -41,7 +41,7 @@ const steps = [
       {
             img: "/process3.jpg",
             number: "3",
-            title: "Weldfox at Work",
+            title: "METAL & CRAFT at Work",
             description:
                   "Aute irure dolor reprehenderit velit esse cillum dolore fugiat",
       },
@@ -71,10 +71,10 @@ const Process = () => {
                         {/* 🔸 Heading */}
                         <div className="text-center">
                               <p className="text-[#8a8a8a] mb-2 tracking-wider uppercase">
-                                    THE WELDFOX COMPANY
+                                    THE METAL & CRAFT AUTOMATION COMPANY
                               </p>
                               <h2 className="text-4xl font-bold text-white">
-                                    How Weldfox Works
+                                    How METAL & CRAFT AUTOMATION Works
                               </h2>
                         </div>
 

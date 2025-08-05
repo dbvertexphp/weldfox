@@ -62,7 +62,7 @@ const Testimonials = () => {
     <div className="max-w-lg text-center lg:text-left">
       <FaQuoteLeft className="text-4xl text-[#F79D2B] mb-4" />
       <p className="uppercase text-sm text-gray-500 tracking-widest">
-        THE WELDFOX COMPANY
+        THE METAL & CRAFT  AUTOMATION COMPANY
       </p>
       <h2 className="text-3xl md:text-4xl font-bold text-[#0f1f3e] mt-2">
         Our Satisfied & <br /> Happy Customers
