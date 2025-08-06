@@ -31,6 +31,7 @@ const StickyHeader = () => {
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
+
   return (
     <>
       {/* 👇 Sticky Header */}
@@ -43,7 +44,7 @@ const StickyHeader = () => {
       >
         <div className="max-w-6xl mx-auto px-4 py-5 flex items-center justify-between">
           {/* Logo */}
-          <img src="/logo-1.jpeg" alt="Logo" className="h-14 w-auto" />
+          <img src="/logo1.PNG" alt="Logo" className="h-14 w-auto" />
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-6 text-lg font-medium">
@@ -51,7 +52,7 @@ const StickyHeader = () => {
             <Link to="/pages/About-us" className="text-[#1a2940] hover:text-[#f79d2b] transition">About</Link>
             <Link to="/pages/Services/Services" className="text-[#1a2940] hover:text-[#f79d2b] transition">Services</Link>
             <Link to="/pages/Projects" className="text-[#1a2940] hover:text-[#f79d2b] transition">Projects</Link>
-            <Link to="/pages/news" className="text-[#1a2940] hover:text-[#f79d2b] transition">News</Link>
+            <Link to="/news" className="text-[#1a2940] hover:text-[#f79d2b] transition">News</Link>
             <Link to="/pages/Contact" className="text-[#1a2940] hover:text-[#f79d2b] transition">Contact</Link>
           </nav>
 

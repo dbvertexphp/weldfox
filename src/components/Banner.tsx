@@ -3,10 +3,8 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 const slides = [
-  // { id: 1, image: "/banner1.jpg" },
-  // { id: 2, image: "/banner2.jpg" },
-    { id: 1, image: "/banner-3.jpg" },
-  { id: 2, image: "/banner2.webp" },
+  { id: 1, image: "/banner1.jpg" },
+  { id: 2, image: "/banner2.jpg" },
 ];
 
 const containerVariants = {
