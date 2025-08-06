@@ -38,7 +38,7 @@ const Services = () => {
     {/* Headings */}
     <div className="text-center">
       <p className="text-[#8a8a8a] max-w-xl mx-auto mb-2 tracking-wider uppercase">
-        THE WELDFOX COMPANY
+        THE METAL & CRAFT AUTOMATION COMPANY
       </p>
       <h2 className="text-3xl md:text-4xl font-bold text-[#0f1f3e]">
         Services Categories & Skills

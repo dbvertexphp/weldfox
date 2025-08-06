@@ -79,7 +79,7 @@ const AboutUs = () => {
           {/* Content */}
           <div>
             <p className="text-sm text-gray-400 tracking-wider uppercase mb-2">
-              The Weldfox Company
+              The METAL & CRAFT  AUTOMATION Company
             </p>
 
             <h2 className="text-3xl md:text-4xl font-bold text-[#1a2940] mb-4 leading-tight">

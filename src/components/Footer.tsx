@@ -16,7 +16,7 @@ const Footer = () => {
         {/* Company Info (Left) */}
         <div className="md:col-span-4">
           <div className="flex items-center gap-2 mb-4">
-            <img src="/logo1.PNG" alt="Logo" className="w-[190px] h-[70px]" />
+            <img src="/logo-1.jpeg" alt="Logo" className="w-[120px] h-[120px]" />
           </div>
           <p className="text-[#A0A0A0] text-base leading-relaxed mb-6">
             Veniam quis nostrud exercitation ullamco laboris nisi ut aliquip exa
@@ -231,7 +231,7 @@ const Footer = () => {
 
       {/* Bottom Footer */}
       <div className="mt-16 border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between text-sm text-[#a0a0a0]">
-        <p>© 2025 Weldfox. All rights reserved.</p>
+        <p>© 2025 METAL & CRAFT AUTOMATION. All rights reserved.</p>
         <div className="flex gap-4 mt-3 md:mt-0">
           <Link to="/terms" className="hover:text-[#f79d2b] transition">
             Terms of Service

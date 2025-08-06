@@ -153,7 +153,7 @@ const ShedWork = () => {
 
         {/* Right Side */}
         <div className="w-full lg:w-2/3 bg-white p-6 sm:p-10 flex flex-col justify-start relative z-10 order-2 mt-[120px]">
-          <p className="text-gray-400 text-base mb-1">THE WELDFOX COMPANY</p>
+          <p className="text-gray-400 text-base mb-1">THE METAL & CRAFT AUTOMATION COMPANY</p>
           <div className="flex items-center gap-2">
             <span className="w-1 h-10 bg-[#F79D2B] inline-block" />
             <h2 className="text-3xl md:text-4xl font-bold text-[#1a2940]">
@@ -187,7 +187,7 @@ const ShedWork = () => {
               className="w-full md:w-1/2 h-[350px] object-cover shadow-md"
             />
             <img
-              src="/shed3.jpg"
+              src="/shed3.jfif"
               alt="Sub Image 2"
               className="w-full md:w-1/2 h-[350px] object-cover shadow-md"
             />
@@ -228,7 +228,7 @@ const ShedWork = () => {
           </ul>
 
           <h2 className="text-xl sm:text-2xl md:text-2xl font-bold text-gray-800 mt-[40px]">
-            Why Choose Weldfox
+            Why Choose METAL & CRAFT AUTOMATION
           </h2>
 
           <div className="space-y-4 w-full lg:w-[74%] mt-[50px]">

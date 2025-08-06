@@ -3,8 +3,10 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 const slides = [
-  { id: 1, image: "/banner1.jpg" },
-  { id: 2, image: "/banner2.jpg" },
+  // { id: 1, image: "/banner1.jpg" },
+  // { id: 2, image: "/banner2.jpg" },
+    { id: 1, image: "/top.png" },
+  { id: 2, image: "/banner1.jpg" },
 ];
 
 const containerVariants = {
@@ -84,7 +86,7 @@ const Banner = () => {
       />
 
       {/* Overlays */}
-      <div className="absolute inset-0 bg-[#787878] opacity-30 z-10" />
+      <div className="absolute inset-0 bg-[#2c2c2c] opacity-30 z-10" />
       <div className="absolute inset-0 bg-black/50 z-20" />
 
       {/* Content */}

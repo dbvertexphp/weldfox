@@ -17,7 +17,7 @@ const Header = () => {
     { name: "About", path: "/pages/About-us" },
     { name: "Services", path: "/pages/Services/Services" },
     { name: "Projects", path: "/pages/projects" },
-    { name: "News", path: "/news" },
+    { name: "News", path: "/pages/news" },
     { name: "Contact", path: "/pages/Contact" },
   ];
 
@@ -26,9 +26,11 @@ const Header = () => {
       {/* 🔵 Desktop Top Header */}
       <div className="hidden lg:flex items-center justify-between px-[200px] py-0 text-white h-[100px] max:w-6xl">
         <img
-          src="/logo1.PNG"
+          // src="/logo1.PNG"
+          src='/logo-2.png'
           alt="Logo"
-          className="h-[150px] w-[200px] object-contain ml-5"
+          className="h-[100px] w-[200px] object-contain ml-5 transparent-0"
+          style={{backgroundColor:""}}
         />
         <div className="flex space-x-6 text-sm mr-5">
           <div className="flex items-center space-x-2">

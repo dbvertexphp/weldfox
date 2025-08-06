@@ -3,11 +3,16 @@ import { FaChevronLeft, FaChevronRight, FaTimes } from "react-icons/fa";
 
 // Replace with actual image paths
 const galleryImages = [
-  "/banner1.jpg",
+  // "/banner1.jpg",
+  // "/banner2.jpg",
+  // "/banner3.jpg",
+  // "/banner4.jpg",
+  // "/banner5.jpg",
+  "/banner1.PNG",
   "/banner2.jpg",
-  "/banner3.jpg",
-  "/banner4.jpg",
-  "/banner5.jpg",
+  "/banner-3.jpg",
+  "/Banner-1.jpg",
+  "/banner-2.webp"
 ];
 
 const Gallery = () => {
@@ -35,11 +40,11 @@ const Gallery = () => {
   };
 
   return (
-    <section className="relative w-full h-[1000px] overflow-hidden">
+    <section className="relative w-full">
       {/* Heading Section */}
       <div className="text-center mt-20">
         <p className="text-[#8a8a8a] max-w-xl mx-auto mb-2 tracking-wider uppercase">
-          THE WELDFOX COMPANY
+          THE METAL & CRAFT AUTOMATION COMPANY
         </p>
         <h2 className="text-4xl font-bold text-[#0f1f3e]">
           Our Projects Gallery
@@ -50,7 +55,7 @@ const Gallery = () => {
       </div>
 
       {/* Image Slider */}
-      <div className="mt-12 flex justify-center items-center gap-6 overflow-hidden relative w-full px-8">
+      <div className="mt-12 flex md:flex-row flex-col justify-center items-center gap-6 overflow-hidden relative w-full px-2 md:px-8">
         {getVisibleImages().map((img, idx) => (
           <div
             key={idx}

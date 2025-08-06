@@ -10,14 +10,14 @@ const AllServicesData = [
   {
     title: "Gates",
     link: "/pages/Services/gates",
-    img: "/gates.jpg",
+    img: "/gate.jfif",
     description:
       "Custom-made gates that combine strength, style, and longevity.Secure, durable and easy-to-operate shutters ideal for homes and businesses.Secure, durable and easy-to-operate shutters ideal for homes and businesses.",
   },
   {
     title: "Railings",
     link: "/pages/Services/railings",
-    img: "/railings1.webp",
+    img: "/railingggg.jfif",
     description:
       "Stylish, secure railings perfect for staircases, balconies, and exteriors.Secure, durable and easy-to-operate shutters ideal for homes and businesses.Secure, durable and easy-to-operate shutters ideal for homes and businesses.",
   },
@@ -51,7 +51,7 @@ const AllServicesData = [
   },
   {
     title: "Glass Skylights",
-    link: "/pages/Services/glass-skylights",
+    link: "/pages/Services/glass-skyights",
     img: "/glass-skylights.jpg",
     description:
       "Let natural light pour in with premium glass skylight installations.Secure, durable and easy-to-operate shutters ideal for homes and businesses.Secure, durable and easy-to-operate shutters ideal for homes and businesses.",
